@@ -1,5 +1,6 @@
 import random
 
+"""
 def randomStudent(d):
     teams = list() # create new list
     for key in d.keys(): # d.keys() list NOT indexable
@@ -8,6 +9,7 @@ def randomStudent(d):
     student = d[team][random.randint(0,len(team)-1)] # select the random student from team
     print (student) # print it
     # return nothing
+"""
 
 def randomS(d):
     team = random.choice(d.values()); # randomly choose one of the values from d
@@ -26,5 +28,5 @@ KREWES = {'orpheus':['Emily', 'Kevin', 'Vishwaa', 'Eric', 'ray', 'Jesse', 'Tiffa
                 'Biraj', 'Jeff', 'Jackson', 'Taejoon', 'Kevin', 'Jude', 'Sophie', 'Henry',
                 'Coby', 'Manfred', 'Leia', 'Ahmed', 'Winston']}
 
-randomStudent(KREWES);
+#randomStudent(KREWES);
 randomS(KREWES);
