@@ -1,13 +1,17 @@
-import random as rand
+import random
 
 def randomStudent(d):
     teams = list() # create new list
     for key in d.keys(): # d.keys() list NOT indexable
         teams.append(key)
-    team = teams[rand.randint(0,len(teams)-1)] # select the random team
-    student = d[team][rand.randint(0,len(team)-1)] # select the random student from team
+    team = teams[random.randint(0,len(teams)-1)] # select the random team
+    student = d[team][random.randint(0,len(team)-1)] # select the random student from team
     print (student) # print it
     # return nothing
+
+def randomS(d):
+    team = random.choice(d.values());
+    print random.choice(team);
 
 KREWES = {'orpheus':['Emily', 'Kevin', 'Vishwaa', 'Eric', 'ray', 'Jesse', 'Tiffany',
             'Amanda', 'Junhee', 'Jackie', 'Tyler', 'Emory', 'Ivan', 'Elizabeth',
@@ -23,3 +27,4 @@ KREWES = {'orpheus':['Emily', 'Kevin', 'Vishwaa', 'Eric', 'ray', 'Jesse', 'Tiffa
                 'Coby', 'Manfred', 'Leia', 'Ahmed', 'Winston']}
 
 randomStudent(KREWES);
+randomS(KREWES);
