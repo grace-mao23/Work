@@ -10,8 +10,8 @@ def randomStudent(d):
     # return nothing
 
 def randomS(d):
-    team = random.choice(d.values());
-    print random.choice(team);
+    team = random.choice(d.values()); # randomly choose one of the values from d
+    print random.choice(team); # randomly choose one of the list items from team
 
 KREWES = {'orpheus':['Emily', 'Kevin', 'Vishwaa', 'Eric', 'ray', 'Jesse', 'Tiffany',
             'Amanda', 'Junhee', 'Jackie', 'Tyler', 'Emory', 'Ivan', 'Elizabeth',
