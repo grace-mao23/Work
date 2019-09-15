@@ -1,21 +1,13 @@
 import random
+import csv
 
-file = open('occupations.csv')
-lines = file.readlines() # read in all lines
-file.close()
-
-lines = lines[1:len(lines)-1] # first and last line not needed
-dict = dict()
-
-for i in lines:
-    newI = i.strip() # get rid of the \n
-    if '\",' in newI: # if the occupation has quotes around it
-        key = newI[1:newI.find('\",')]
-        value = float(newI[newI.find('\",')+2:])
-    else:
-        key = newI[:newI.find(',')] # if it's a simple occupation
-        value = float(newI[newI.find(',')+1:])
-    dict[key] = value # add to dictionary
+workersAndPercent = {}
+with open('occupations.csv') as csvfile:
+    readCSV = csv.reader(csvfile, delimiter=',')
+    for row in readCSV:
+        if row[0] != 'Job Class':
+            workersAndPercent[row[0]] = float(row[1])
+    workersAndPercent.pop('Total',99.8)
 
 def randomO(d):
     bigL = list()
@@ -23,4 +15,4 @@ def randomO(d):
         bigL += [key] * int(value * 10)
     return random.choice(bigL)
 
-print(randomO(dict))
+print(randomO(workersAndPercent))
