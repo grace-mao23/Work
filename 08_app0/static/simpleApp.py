@@ -7,7 +7,7 @@ def hello_world():
     print(__name__)
     return "Hello World!"
 
-@app.route("/espanol")
+@app.route("/espanol") #changing the address
 def hola_world():
     print(__name__)
     return "Hola Mundo!"
@@ -19,4 +19,4 @@ def bonjour_world():
 
 if __name__ == "__main__":
     app.debug = True
-    app.run()
+    app.run() #runs all of them
