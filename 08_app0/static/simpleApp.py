@@ -10,6 +10,7 @@ app = Flask(__name__)
 def hello_world():
     #print("YES")
     print(__name__) #prints to terminal
+    #print("NO")
     return "Hello World!"
 
 @app.route("/espanol") #changing the address
