@@ -1,10 +1,15 @@
+#Grace Mao
+#SoftDev1 pd9
+#K08 -- Lemme Flask You Sump'n/Three App Routes
+#2019-09-18
+
 from flask import Flask
 app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
     #print("YES")
-    print(__name__)
+    print(__name__) #prints to terminal
     return "Hello World!"
 
 @app.route("/espanol") #changing the address
@@ -18,5 +23,6 @@ def bonjour_world():
     return "Bonjour Monde!"
 
 if __name__ == "__main__":
-    app.debug = True
+    app.debug = True #defaults to False
+    # allows you to make changes without restarting the terminal action
     app.run() #runs all of them
