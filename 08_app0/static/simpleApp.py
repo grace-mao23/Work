@@ -4,9 +4,9 @@
 #2019-09-18
 
 from flask import Flask
-app = Flask(__name__)
+app = Flask(__name__) #create instance of class Flask
 
-@app.route("/")
+@app.route("/") #assign following function to run when root route requested
 def hello_world():
     #print("YES")
     print(__name__) #prints to terminal
