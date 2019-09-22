@@ -32,7 +32,12 @@ def home():
 @app.route('/occupyflaskst')
 def occupy():
     return render_template('template.html',
+                            title = 'Tablified Occupations Data',
+                            heading = 'K10: Jinja Tuning',
+                            team = 'The Bears: Taejoon Kim, Grace Mao',
                             job = randomO(workersAndPercent),
+                            jobs = 'Occupation',
+                            percent = 'Percentage',
                             collection = workersAndPercent)
 
 if __name__ == "__main__":
