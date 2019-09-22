@@ -31,6 +31,9 @@ def home():
 
 @app.route('/occupyflaskst')
 def occupy():
+    return render_template('template.html',
+                            job = randomO(workersAndPercent),
+                            collection = workersAndPercent)
 
 if __name__ == "__main__":
     app.debug = True
