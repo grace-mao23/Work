@@ -7,10 +7,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <title> {{ title }} </title>
-      <h1> {{ heading }} </h1>
+    <title> {{ title }} </title>
+    <h1> {{ heading }} </h1>
   </head>
   <body>
-
+    {{ team }} <br>
+    Random job: {{ job }} <br> <br>
+    <table> <!-- credits to Tammy Chen for catching me up -->
+      <tr>
+        <th> {{ jobs }} </th>
+        <th> {{ percent }} </th>
+      </tr>
+      {% for item in collection %}
+        <tr>
+          <td> {{ item }} </td>
+          <td> {{ collection[item] }} </td>
+        </tr>
+      {% endfor %}
+    </table>
   </body>
 </html>
