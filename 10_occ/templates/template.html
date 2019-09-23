@@ -17,7 +17,7 @@
   </style>
   <body>
     {{ team }} <br>
-    Random job: {{ job }} <br> <br>
+    Random job: {{ job }} <br> Link: {{ link }} <br> <br>
     <table> <!-- credits to Tammy Chen for catching me up -->
       <tr>
         <th> {{ jobs }} </th>
@@ -26,7 +26,7 @@
       {% for item in collection %}
         <tr>
           <td> {{ item }} </td>
-          <td> {{ collection[item] }} </td>
+          <td> {{ collection[item][0] }} </td>
         </tr>
       {% endfor %}
     </table>

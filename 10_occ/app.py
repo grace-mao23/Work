@@ -9,33 +9,45 @@ import random
 import csv
 
 workersAndPercent = {}
-with open('occupations.csv') as csvfile:
+with open('occ2.csv') as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
     for row in readCSV: #for each row in the csv file
-        if row[0] != 'Job Class': #as long as it's not the first row
-            workersAndPercent[row[0]] = float(row[1]) #turn value into a float
-    workersAndPercent.pop('Total',99.8) #pop off the last row
+        if row[0] != 'Job Class' and row[0] != 'Total': #as long as it's not the first row
+            temp = list()
+            temp.append(float(row[1]))
+            temp.append(row[2])
+            workersAndPercent[row[0]] = temp #turn value into a float
+    #workersAndPercent.pop('Total',99.8) #pop off the last row
 
-def randomO(d):
-    bigL = list()
+def randomO(d): # WITHOUT LINKS
+    bigL = list() # will generate very large list with weighted items
     for key,value in d.items():
         bigL += [key] * int(value * 10) #add each job to the list value*10 many times
     return random.choice(bigL) #weighted random choice based on how many times a job is in the list
 
-app = Flask(__name__)
+def rando(d): # WITH LINKS
+    bigL = list()
+    for key,value in d.items():
+        bigL += [key] * int(value[0] * 10)
+    return random.choice(bigL)
+
+app = Flask(__name__) #instance of Flask
 
 @app.route("/") #root
 def home():
-    print(__name__)
+    print(__name__) #prints to terminal
     return "Go to /occupyflaskst"
 
 @app.route('/occupyflaskst')
 def occupy():
+    print(__name__) #prints to terminal
+    chosen = rando(workersAndPercent)
     return render_template('template.html',
                             title = 'Tablified Occupations Data',
                             heading = 'K10: Jinja Tuning',
                             team = 'The Bears: Taejoon Kim, Grace Mao',
-                            job = randomO(workersAndPercent),
+                            job = chosen,
+                            link = workersAndPercent[chosen][1],
                             jobs = 'Occupation',
                             percent = 'Percentage',
                             collection = workersAndPercent)
