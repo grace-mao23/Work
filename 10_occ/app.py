@@ -45,6 +45,7 @@ def occupy():
     return render_template('template.html',
                             title = 'Tablified Occupations Data',
                             heading = 'K10: Jinja Tuning',
+                            h2 = 'Tablifying Occupations Data and Providing Help :)',
                             team = 'The Bears: Taejoon Kim, Grace Mao',
                             job = chosen,
                             link = workersAndPercent[chosen][1],
