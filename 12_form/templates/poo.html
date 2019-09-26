@@ -4,19 +4,17 @@
   <head>
     <meta charset="utf-8"/>
     <title>
-      Form
+      Response
 	  </title>
     <h1> The HillBillies: Grace Mao, Jackson Zou </h1>
   </head>
   <center>
     <body>
-      <form action="/auth">
-        Enter your username
-        <br> <br>
-        <input type="text", name="name">
-        <br> <br>
-        <input type="submit">
-      </form>
+      Username entered: {{ name }}
+      <br> <br>
+      {{ args }}
+      <br> <br>
+      Greetings {{ name }}!
     </body>
   </center>
 </html>

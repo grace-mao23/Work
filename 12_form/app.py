@@ -7,13 +7,12 @@ def home():
 
 @app.route("/auth")
 def maybe():
-    print(request.form)
-    print(request)
-    print(request.args)
-    print(request.headers)
-    print(request.method)
-    print(app)
-    return request.args["jaco"]
+    #print (request.args)
+    #print (request.method)
+    #print (app)
+    return render_template('poo.html',
+                            name = request.args['name'],
+                            args = request.method)
 
 if __name__ == "__main__":
     app.debug = True
