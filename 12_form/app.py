@@ -1,3 +1,8 @@
+#The HillBillies: Grace Mao, Jackson Zou
+#SoftDev1 pd9
+#K12 -- Echo echo echo
+# 2019-10-02
+
 from flask import Flask, render_template, request
 app = Flask(__name__)
 
