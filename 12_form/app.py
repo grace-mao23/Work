@@ -12,9 +12,17 @@ def home():
 
 @app.route("/auth")
 def maybe():
-    #print (request.args)
-    #print (request.method)
-    #print (app)
+    # print("\n\n\n")
+    # print("***DIAG: this Flask obj ***")
+    # print(app)
+    # print("***DIAG: request obj ***")
+    # print(request)
+    # print("***DIAG: request.args ***")
+    # print(request.args)
+    # print("***DIAG: request.args['username'] ***")
+    # print(request.args['name'])
+    # print("***DIAG: request.headers ***")
+    # print(request.headers)
     return render_template('poo.html',
                             name = request.args['name'],
                             args = request.method)
