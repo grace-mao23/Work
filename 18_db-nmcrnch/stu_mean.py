@@ -31,6 +31,7 @@ c.execute(command)
 rows = c.fetchall()
 #print(type(rows)) --> rows is a list
 for row in rows:
+    print("{}, {}: {}".format(row[0], row[1], row[2]))
     # insert the id, average into stu_avg for each student
     newCommand = "INSERT INTO stu_avg VALUES ({}, {})".format(row[1], row[2])
     c.execute(newCommand)
