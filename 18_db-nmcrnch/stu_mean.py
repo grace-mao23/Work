@@ -19,6 +19,22 @@ command = """
             GROUP BY students.id;
           """
 
+# facilitate adding rows to courses (STEP 5)
+print("To stop adding courses, press ENTER")
+add = True;
+while (add):
+    code = input("Course code: ")
+    if (code == ""):
+        add = False
+    else:
+        mark = input("Course mark: ")
+        id = input("ID: ")
+        print(type(code))
+        commandAdd = """
+                        INSERT INTO courses VALUES ( '{}', {}, {} );
+                     """.format(code, mark, id)
+        c.execute(commandAdd)
+
 # creates new table stu_avg (STEP 4)
 command1 = """
             CREATE TABLE stu_avg ( id INTEGER, average INTEGER );
