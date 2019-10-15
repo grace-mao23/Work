@@ -1,4 +1,4 @@
-#Jun tao Lei, Grace Mao, Sophie Nichol
+#Zebras: Jun tao Lei, Grace Mao, Sophie Nichol
 #SoftDev1 pd9
 #K18: Average
 #2019-10-11
@@ -29,7 +29,7 @@ while (add):
     else:
         mark = input("Course mark: ")
         id = input("ID: ")
-        print(type(code))
+        #print(type(code))
         commandAdd = """
                         INSERT INTO courses VALUES ( '{}', {}, {} );
                      """.format(code, mark, id)
