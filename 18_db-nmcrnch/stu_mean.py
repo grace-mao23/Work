@@ -5,6 +5,8 @@
 
 import sqlite3   #enable control of an sqlite database
 import csv       #facilitate CSV I/O
+from re import search
+from numbers import Number
 
 DB_FILE="school.db"
 
@@ -19,6 +21,15 @@ command = """
             GROUP BY students.id;
           """
 
+# Insert one row into a table
+def insert(values, tbl_name, db):
+  field = " VALUES("
+  for value in values:
+    if isinstance(value, Number) or bool(search("^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$", value)):
+      field += str(value) + ","
+    else: field += '"{0}"'.format(value) + ","
+  db.execute("INSERT INTO " + tbl_name + field[:-1] + ")")
+
 # facilitate adding rows to courses (STEP 5)
 print("To stop adding courses, press ENTER")
 add = True;
@@ -30,10 +41,11 @@ while (add):
         mark = input("Course mark: ")
         id = input("ID: ")
         #print(type(code))
-        commandAdd = """
-                        INSERT INTO courses VALUES ( '{}', {}, {} );
-                     """.format(code, mark, id)
-        c.execute(commandAdd)
+        insert([code, mark, id], 'courses', db)
+        #commandAdd = """
+        #                INSERT INTO courses VALUES ( '{}', {}, {} );
+        #             """.format(code, mark, id)
+        #c.execute(commandAdd)
 
 # creates new table stu_avg (STEP 4)
 command1 = """
@@ -49,8 +61,9 @@ rows = c.fetchall()
 for row in rows:
     print("{}, {}: {}".format(row[0], row[1], row[2]))
     # insert the id, average into stu_avg for each student
-    newCommand = "INSERT INTO stu_avg VALUES ({}, {})".format(row[1], row[2])
-    c.execute(newCommand)
+    insert([row[1], row[2]], 'stu_avg', db)
+    #newCommand = "INSERT INTO stu_avg VALUES ({}, {})".format(row[1], row[2])
+    #c.execute(newCommand)
     #print(row)
 
 ### USED TO TEST INSERTION OF VALUES
