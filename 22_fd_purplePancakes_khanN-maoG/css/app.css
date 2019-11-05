@@ -1,0 +1,27 @@
+body {
+  background-color: #98cbe3;
+}
+
+h1 {
+  padding: 20px;
+  font-size: 40px;
+}
+
+a {
+  color: #0055ff;
+}
+
+#cell {
+  background-color: #dbf4ff;
+}
+
+#form {
+  margin-top: 20px;
+  border-top: solid;
+  border-color: #dadce0;
+  padding-top: 20px;
+}
+
+.callout {
+  background-color: #ffffff;
+}
