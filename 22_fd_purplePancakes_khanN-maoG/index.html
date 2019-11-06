@@ -2,8 +2,7 @@
 <html class="no-js" lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Intro to Foundation</title>
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
@@ -19,15 +18,15 @@
             <p>Here are the key features we'd like to present you with:</p>
             <div class="grid-x grid-padding-x">
               <div class="large-4 medium-4 cell">
-                <p><a href="#cell">Cells</a>
+                <p><a href="#cell">Cells</a> <br>
                 <br>Cells are exactly as they sound. They separate text.</p>
               </div>
               <div class="large-4 medium-4 cell">
-                <p><a href="#grid">Grid</a>
+                <p><a href="#grid">Grid</a> <br>
                 <br>Grids are also exactly as they sound. They separate into boxes.</p>
               </div>
               <div class="large-4 medium-4 cell">
-                <p><a href="#form">Form</a>
+                <p><a href="#form">Form</a> <br>
                 <br>Forms are yet again exactly as they sound. They allow the users to fill things in.</p>
               </div>
             </div>
@@ -35,9 +34,11 @@
         </div>
       </div>
 
-      <div class="grid-x grid-padding-x" id="grid">
+      <div class="grid-x grid-padding-x" >
         <div class="large-8 medium-8 cell">
-          <h5>Take a look at this grid:</h5>
+          <div id="grid">
+            <h5>Take a look at this grid:</h5>
+          </div>
 
           <div class="grid-x grid-padding-x">
             <div class="large-12 cell">
@@ -46,12 +47,14 @@
               </div>
             </div>
           </div>
+
           <div class="grid-x grid-padding-x">
             <div class="large-6 medium-6 cell">
               <div class="callout">
                 <p>These are 6 cell sections</p>
               </div>
             </div>
+
             <div class="large-6 medium-6 cell">
               <div class="callout">
                 <p>They are in separate divs to create the two boxes</p>
@@ -59,51 +62,76 @@
             </div>
           </div>
 
-          <div id="form">
+          <div id="form" class="separate">
             <h5>Hey look! A form:</h5>
           </div>
+
           <form>
             <div class="grid-x grid-padding-x">
               <div class="large-12 cell">
-                <label>Input Label</label>
-                <input type="text" placeholder="large-12.cell" />
+                <label>Here you can enter your name</label>
+                <input type="text" placeholder="Thluffy">
               </div>
             </div>
-            <div class="grid-x grid-padding-x">
 
+            <div class="grid-x grid-padding-x">
               <div class="large-4 medium-4 cell">
                 <div class="grid-x">
-                  <label>Input Label</label>
+                  <label>Now your gmail</label>
                   <div class="input-group">
-                    <input type="text" placeholder="small-9.cell" class="input-group-field" />
-                    <span class="input-group-label">.com</span>
+                    <input type="text" placeholder="tuxedopenguin9" class="input-group-field">
+                    <span class="input-group-label">@gmail.com</span>
                   </div>
                 </div>
               </div>
             </div>
+
             <div class="grid-x grid-padding-x">
               <div class="large-6 medium-6 cell">
-                <label>Choose Your Favorite</label>
-                <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Radio 1</label>
-                <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Radio 2</label>
+                <label>Vote for fun!</label>
+                <input type="radio" id="first">
+                  <label for="first">Snorlax</label>
+                <input type="radio" id="second">
+                  <label for="second">Bulbasaur</label>
               </div>
-
             </div>
+
             <div class="grid-x grid-padding-x">
               <div class="large-12 cell">
-                <label>Textarea Label</label>
-                <textarea placeholder="small-12.cell"></textarea>
+                <label>Any feedback?</label>
+                <textarea placeholder="This was so cool"></textarea>
               </div>
             </div>
           </form>
         </div>
 
         <div class="large-4 medium-4 cell">
-          <h5>Try one of these buttons:</h5>
-          <p><a href="#" class="button">Simple Button</a><br/>
+          <h5>Of course, you'll need a button</h5>
+          <p><a href="#copyright" class="button">Copyright Info</a><br/>
           <div class="callout">
-            <h5>So many components, girl!</h5>
-            <p>A whole kitchen sink of goodies comes with Foundation. Check out the docs to see them all, along with details on making them your own.</p>
+            <h5>With these cells, you can easily format your webpage</h5>
+            <p>Many more features come with Foundation, from CSS to JS usage.
+               For more information and to see our sources, check out the Foundation site and the Starter Projects Page here:
+               <br> <br>
+               <a href="https://foundation.zurb.com/">Foundation.com</a> <br> <br>
+               <a href="https://foundation.zurb.com/sites/docs/starter-projects.html">Starter Projects</a>
+             </p>
+          </div>
+        </div>
+      </div>
+
+    <div class="grid-x grid-padding-x">
+      <div class="large-12 cell">
+        <div class="separate" id="copyright">
+          <h5>Copyright &copy; Purple Pancakes 2019</h5>
+          <p class="regularHeading">
+            Purple Pancakes: Nahi Khan and Grace Mao <br>
+            SoftDev1 pd9 <br>
+            K22 -- What Does Frame Work For? <br>
+            2019-11-05
+          </p>
+          <div class="secret">
+            <h5>THANK YOU!</h5>
           </div>
         </div>
       </div>
