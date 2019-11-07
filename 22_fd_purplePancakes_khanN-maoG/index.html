@@ -1,4 +1,10 @@
-<!doctype html>
+<!DOCTYPE HTML>
+
+<!--Purple Pancakes: Nahi Khan and Grace Mao
+SoftDev1 pd9
+K22 - What Does Frame Work For?
+2019-11-05-->
+
 <html class="no-js" lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -8,156 +14,269 @@
     <!-- Compressed CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css">
 
+    <!-- Compressed JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/js/foundation.min.js"></script>
+
   </head>
   <body>
-      <div class="grid-x grid-padding-x">
-        <div class="large-12 cell">
-            <h1>Foundation: Where Greatness Starts</h1>
 
+    <!-- BIG HEADING -->
+    <div class="grid-x grid-padding-x">
+      <div class="large-12 cell">
+        <h1>Foundation: Where Greatness Starts</h1>
+        <hr>
+      </div>
+    </div>
+
+    <!-- MENU -->
+    <div class="grid-x grid-padding-x">
+      <div class="medium-6 cell">
+        <ul class="menu">
+          <li class="is-active"><a href="#">Home</a></li>
+          <li><a href="#intro">Introduction</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#grid">Cells</a></li>
+          <li><a href="#form">Forms</a></li>
+          <li><a href="#copyright">Copyright Information</a></li>
+        </ul>
+      </div>
+
+      <div class="medium-6 cell">
+        <div class="success callout">
+            Here's your classic menu!
+            Click on the different tabs to go to specific sections.
+        </div>
+      </div>
+    </div>
+
+    <!-- INTRODUCTION -->
+    <div class="grid-x grid-padding-x">
+      <div class="large-12 cell">
+
+        <hr>
+
+        <div class="callout" id="intro">
+          <h3>Purple Pancakes Presents the Average Person's Guide to Foundation </h3>
+          <p>Foundation is a basic front-end framework tool to get anyone started with their own webpage.
+             Throughout this page, we will be demo-ing the different resources and tricks that come with
+             this awesome front-end framwork.</p>
+          <p>In order to get started with foundation, please enter this code into your html page</p>
+
+          <code class="cell-block-container">
+            &lt;!-- Compressed CSS --&gt; <br>
+            &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css"&gt;
+            <br> <br>
+            &lt;!-- Compressed JavaScript --&gt; <br>
+            &lt;script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/js/foundation.min.js"&gt;&lt;/script&gt;
+          </code>
+
+          <br>
+
+          <p>The key features we'd like to present you with are listed on the menu at the top!</p>
+          <p>That being said, let's look at how to create a menu first.</p>
+
+        </div>
+
+        <hr>
+
+      </div>
+    </div>
+
+    <!-- MENU DEMO -->
+    <div class="grid-x grid-padding-x" id="menu">
+      <div class="medium-6 cell">
+        <h4>Menus: What Would You Like to Order?</h4>
+        <p>Menus can help you organize your webpage and make it easy to navigate.
+        Foundation makes it super easy for you to have a menu, because it's built in!</p>
+
+        <p>By using the class "menu", you can create a menu of your own choosing</p>
+        <p>Here's how the above menu was made &rarr;</p>
+      </div>
+
+      <div class="medium-6 cell">
+        <code class="cell-block-container">
+          &lt;ul class="menu"&gt;
+          <div class="menu nested">
+            <br>&lt;li class="is-active"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            <br>&lt;li>&lt;a href="#intro"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+            <br>&lt;!-- ... --&gt;
+          </div>
+          <br>&lt;/ul&gt;
+        </code>
+      </div>
+    </div>
+
+    <!-- random line break -->
+    <div class="grid-x grid-padding-x">
+      <div class="large-12 cell">
+        <hr>
+      </div>
+    </div>
+
+    <!-- CELLS/GRID DEMO -->
+    <div class="grid-x grid-padding-x" >
+      <div class="large-12 cell" id="grid">
+        <h4>Unpopular Opinion: Graph Paper > Lined Paper</h4>
+      </div>
+
+      <div class="large-8 medium-8 cell">
+        <h5>Take a look at this grid:</h5>
+
+        <div class="grid-x grid-padding-x">
+          <div class="large-12 cell">
+            <div class="callout">
+              <p>Here is a 12 cell section</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-x grid-padding-x">
+          <div class="large-6 medium-6 cell">
+            <div class="callout">
+              <p>These are 6 cell sections</p>
+            </div>
+          </div>
+
+          <div class="large-6 medium-6 cell">
+            <div class="callout">
+              <p>They are in separate divs to create the two boxes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-x grid-padding-x">
+          <div class="medium-6 cell">
+            Now you might be wondering why we're showing you these random grids.
+          </div>
+
+          <div class="medium-6 cell">
+            In fact, this whole webpage is a grid, specifically made up of different sized <b> cells</b>
+          </div>
         </div>
       </div>
 
-      <div class="row">
-  <div class="columns">
-    <ul class="accordion" data-accordion>
-  <li class="accordion-item is-active" data-accordion-item>
-    <a href="#" class="accordion-title">Accordion 1</a>
-    <div class="accordion-content" data-tab-content >
-      <p>Panel 1. Lorem ipsum dolor</p>
-      <a href="#">Nowhere to Go</a>
-    </div>
-  </li>
-  <li class="accordion-item" data-accordion-item>
-    <a href="#" class="accordion-title">Accordion 2</a>
-    <div class="accordion-content" data-tab-content>
-      <textarea></textarea>
-      <button class="button">I do nothing!</button>
-    </div>
-  </li>
-  <li class="accordion-item" data-accordion-item>
-    <a href="#" class="accordion-title">Accordion 3</a>
-    <div class="accordion-content" data-tab-content>
-      Type your name!
-      <input type="text"></input>
-    </div>
-  </li>
-</ul>
-  </div>
-</div>
-
-      <div class="grid-x grid-padding-x">
-        <div class="large-12 cell">
-          <div class="callout" id="cell">
-            <h3>Purple Pancakes Presents the Average Person's Guide to Foundation </h3>
-            <p>Foundation is a basic front-end framework tool to get anyone started with their own webpage.</p>
-            <p>Here are the key features we'd like to present you with:</p>
-            <div class="grid-x grid-padding-x">
-              <div class="large-4 medium-4 cell">
-                <p><a href="#cell">Cells</a> <br>
-                <br>Cells are exactly as they sound. They separate text.</p>
-              </div>
-              <div class="large-4 medium-4 cell">
-                <p><a href="#grid">Grid</a> <br>
-                <br>Grids are also exactly as they sound. They separate into boxes.</p>
-              </div>
-              <div class="large-4 medium-4 cell">
-                <p><a href="#form">Form</a> <br>
-                <br>Forms are yet again exactly as they sound. They allow the users to fill things in.</p>
-              </div>
-            </div>
-          </div>
+      <div class="large-4 medium-4 cell">
+        <div class="warning callout">
+          These cells are invisible, but Foundation makes it easy to create them in order to format
+          your website into different divisions. Using the "callout" tag creates the border. This way,
+          you can easily separate sections and divide up the page.
+          <p> Code snippet &swarr; </p>
         </div>
       </div>
 
-      <div class="grid-x grid-padding-x" >
-        <div class="large-8 medium-8 cell">
-          <hr>
-          <div id="grid">
-            <h5>Take a look at this grid:</h5>
-          </div>
-
-          <div class="grid-x grid-padding-x">
-            <div class="large-12 cell">
-              <div class="callout">
-                <p>Here is a 12 cell section</p>
-              </div>
+      <div class="large-12 cell">
+        <code class="cell-block-container">
+          &lt;div class="large-12 cell"&gt; <br>
+            <div class="menu nested">
+            &lt;div class="callout"&gt; <br>
+                Here is a 12 cell section <br>
+            &lt;/div&gt; <br>
             </div>
-          </div>
+          &lt;/div&gt;
+        </code>
+      </div>
+    </div>
 
-          <div class="grid-x grid-padding-x">
-            <div class="large-6 medium-6 cell">
-              <div class="callout">
-                <p>These are 6 cell sections</p>
-              </div>
-            </div>
+    <!-- FORM DEMO -->
+    <div class="grid-x grid-padding-x">
+      <div class="large-12 cell">
+        <hr>
 
-            <div class="large-6 medium-6 cell">
-              <div class="callout">
-                <p>They are in separate divs to create the two boxes</p>
-              </div>
-            </div>
-          </div>
+        <div id="form">
+          <h4>We Care About Your Feelings</h4>
+        </div>
 
-          <hr>
-          <div id="form" class="separate">
-            <h5>Hey look! A form:</h5>
-          </div>
-
+        <div class="medium-6 cell">
           <form>
-            <div class="grid-x grid-padding-x">
-              <div class="large-12 cell">
-                <label>Here you can enter your name</label>
-                <input type="text" placeholder="Thluffy">
-              </div>
+            <div class="medium-6 cell">
+              <label>Here you can enter your name</label>
+              <input type="text" placeholder="Thluffy">
             </div>
 
-
-            <div class="grid-x grid-padding-x">
-              <div class="large-4 medium-4 cell">
-                <div class="grid-x">
-                  <label>Now your gmail</label>
-                  <div class="input-group">
-                    <input type="text" placeholder="tuxedopenguin9" class="input-group-field">
-                    <span class="input-group-label">@gmail.com</span>
-                  </div>
+            <div class="medium-6 cell">
+              <div class="grid-x">
+                <label>Now your gmail</label>
+                <div class="input-group">
+                  <input type="text" placeholder="tuxedopenguin9" class="input-group-field">
+                  <span class="input-group-label">@gmail.com</span>
                 </div>
               </div>
             </div>
 
-            <div class="grid-x grid-padding-x">
-              <div class="large-6 medium-6 cell">
-                <label>Vote for fun!</label>
-                <input type="radio" id="first">
-                  <label for="first">Snorlax</label>
-                <input type="radio" id="second">
-                  <label for="second">Bulbasaur</label>
-              </div>
+            <div class="medium-6 cell">
+              <label>Vote for fun!</label>
+              <input type="radio" id="first">
+                <label for="first">Snorlax</label>
+              <input type="radio" id="second">
+                <label for="second">Bulbasaur</label>
             </div>
 
-            <div class="grid-x grid-padding-x">
-              <div class="large-12 cell">
-                <label>Any feedback?</label>
-                <textarea placeholder="This was so cool"></textarea>
-              </div>
+            <div class="medium-6 cell">
+              <label>Any feedback?</label>
+              <textarea placeholder="This was so cool"></textarea>
             </div>
           </form>
         </div>
 
-        <div class="large-4 medium-4 cell">
-          <h5>Of course, you'll need a button</h5>
-          <p><a href="#copyright" class="button">Copyright Info</a><br/>
-          <div class="callout">
-            <h5>With these cells, you can easily format your webpage</h5>
-            <p>Many more features come with Foundation, from CSS to JS usage.
-               For more information and to see our sources, check out the Foundation site and the Starter Projects Page here:
-               <br> <br>
-               <a href="#help">Foundation.com</a> <br> <br>
-               <a href="#help">Starter Projects</a>
-             </p>
+        <div class="medium-6 cell">
+          <div class="primary callout">
+            Forms are useful for getting input for your webpage. While this may look like your typical form,
+            the special thing about this one is that input field "@gmail.com". For convenience,
+            you can have an <code>"input-group-field"</code> to keep one part set so that no one has to type it!
           </div>
         </div>
       </div>
+    </div>
 
+    <!-- BUTTONS -->
+    <div class="grid-x grid-padding-x" id="button">
+      <div class="large-4 medium-4 cell">
+        <h5>In accordance with the form, you'll need a submit button</h5>
+
+        <a href="#button" class="primary button">Submit</a>
+        <br><p>Buttons in Foundation are pretty ordinary, but there are different types of buttons,
+               color arranged, which is nice.</p>
+      </div>
+
+      <div class="large-4 medium-4 cell">
+        <p>That was a <code>"primary button"</code>, as seen by the blue color</p>
+        <p>Here's some other examples &darr;</p>
+        <a href="#button" class="secondary button">Secondary</a>
+        <a href="#button" class="warning button">Warning</a>
+        <a href="#button" class="alert button">Alert</a><br>
+        <a href="#button" class="success button">Success</a>
+        <a href="#button" class="disabled button">Disabled</a>
+        <a href="#button" class="hollow button">Hollow</a>
+      </div>
+
+      <div class="large-4 cell">
+        <p>Here's a coded example of a simple success button</p>
+        <code class="cell-block-container">
+          &lt;a href="#" class="success button"&gt;
+          <div class="menu nested">
+            Wishing You Success<br>
+          </div>
+          &lt;/a&gt;
+        </code>
+      </div>
+    </div>
+
+    <!-- ENDING INFO -->
+    <div class="grid-x grid-padding-x">
+      <div class="large-12 cell">
+        <hr>
+        <h3> We hope this was super useful for your future endeavors!</h3>
+        <p>Foundation is a great resource for any simple page such as this one. For more resources,
+           visit the
+           <a href="https://foundation.zurb.com/">Foundation website</a>
+            and their <a href="https://foundation.zurb.com/sites/docs/">documenation page</a>.
+        </p>
+        <p>Let's end with an image, shall we.</p>
+        <img src="https://i.redd.it/ig5u8ke5qo421.png" height=200px width=500px>
+      </div>
+    </div>
+
+    <!-- COPYRIGHT -->
     <div class="grid-x grid-padding-x">
       <div class="large-12 cell">
         <div id="copyright">
@@ -175,10 +294,5 @@
         </div>
       </div>
     </div>
-
-    <!-- <script src="js/vendor/jquery.js"></script>
-    <script src="js/vendor/what-input.js"></script>
-    <script src="js/vendor/foundation.js"></script>
-    <script src="js/app.js"></script> -->
   </body>
 </html>
