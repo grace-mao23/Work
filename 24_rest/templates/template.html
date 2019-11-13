@@ -4,6 +4,14 @@
     <title> {{ title }} </title>
   </head>
   <body>
-    Hello
+    <h2> Images </h2>
+    <h4>Note: the 2 images below are different, just slightly, taken at almost the
+    exact same moment in succession.</h4>
+    {% for item in collection %}
+      <img src="{{ item["img_src"] }}" width=500px height=500px>
+      <br>
+      {{ description(item) }}
+      <br>
+    {% endfor %}
   </body>
 </html>
