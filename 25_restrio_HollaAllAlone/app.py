@@ -26,6 +26,31 @@ def ghibli():
                                           rt=data['rt_score'],
                                           date=data['release_date'])
 
+@app.route("/purgomalum")
+def profanity():
+    url = "https://www.purgomalum.com/service/json?text=kiss%20my%20ass%20softdev%20is%20awesome"
+    response = urllib.urlopen(url)
+    response = response.read()
+    data = json.loads(response)
+    return render_template("purgo.html", input=data['result'])
+
+@app.route("/openlibrary")
+def lib():
+    url = "https://openlibrary.org/works/OL16596099W.json"
+    response = urllib.urlopen(url)
+    response = response.read()
+    data = json.loads(response)
+    url2 = "https://openlibrary.org{}.json".format(data['authors'][0]['author']['key'])
+    #print(url2);
+    res = urllib.urlopen(url2)
+    res = res.read()
+    data2 = json.loads(res)
+    #print(data2)
+    return render_template("library.html", title=data['title'],
+                                           author=data2['name'],
+                                           desc=data['description']['value'],
+                                           collection=data['subjects'])
+
 
 if __name__ == "__main__":
     app.debug = True
