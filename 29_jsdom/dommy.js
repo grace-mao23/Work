@@ -48,26 +48,26 @@ var fib = function(n) {
   }
 };
 
-var fibNums = [];
+var fibs = {
+  nums: [],
+  add: function() {
+    var ans;
+    if (this.nums.length < 2) { // if the length is less than 2, the statement in else won't work
+      ans = fib(this.nums.length);
+    } else { // append the next fibonacci number into the list
+      ans = this.nums[this.nums.length - 1] + this.nums[this.nums.length - 2];
+    }
+    this.nums.push(ans);
+    return ans;
+  }
+}
 
 var addFib = function(e) {
   console.log(e);
   var list = document.getElementById("fiblist");
   var item = document.createElement("li");
-  item.innerHTML = addFib2(e);
+  item.innerHTML = fibs.add();
   list.appendChild(item);
-};
-
-var addFib2 = function(e) {
-  console.log(e);
-  var ans;
-  if (fibNums.length < 2) { // if the length is less than 2, the statement in else won't work
-    ans = fib(fibNums.length);
-  } else { // append the next fibonacci number into the list
-    ans = fibNums[fibNums.length - 1] + fibNums[fibNums.length - 2];
-  }
-  fibNums.push(ans);
-  return ans;
 };
 
 var fb = document.getElementById("fb");
