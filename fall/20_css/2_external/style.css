@@ -1,0 +1,41 @@
+body {
+  background-color: #858585;
+  font-family: Arial;
+}
+h1 {
+  background-color: #a3a3a3;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 0px;
+}
+.sidebar {
+  float: left;
+  width:180px;
+  height:500px;
+}
+h3 {
+  margin: 10px;
+  color: #000000;
+}
+ul {
+  list-style-type: none;
+  margin: 10px;
+  padding: 0;
+}
+a {
+  color: #d1d1d1;
+  text-decoration: none;
+}
+h2 {
+  margin: 10px;
+  font-family: Arial;
+}
+.text {
+  font-family: Arial;
+}
+.footer {
+  background-color: #5e5e5e;
+  padding: 10px;
+  color: #858585;
+  text-align: right;
+}

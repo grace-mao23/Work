@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>
+        OpenLibrary API
+	  </title>
+  </head>
+  <body>
+    <h1> {{ title }} by {{ author }} </h1>
+    {{ desc }}<br><br>
+    Subjects: <br>
+    <ul>
+    {% for item in collection %}
+      <li>
+        {{ item }}
+      </li>
+    {% endfor %}
+    </ul>
+  </body>
+</html>

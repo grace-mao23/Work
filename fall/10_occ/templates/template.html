@@ -1,0 +1,36 @@
+<!--an appropriate title,
+  a descriptive heading,
+  your team name and roster,
+  and a tablified version of the occupations data, along with
+  a randomly selected occupation shown at the top. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> {{ title }} </title>
+    <h1> {{ heading }} </h1>
+    <h2> {{ h2 }} </h2>
+  </head>
+  <style>
+    th {
+      text-align: left;
+    }
+  </style>
+  <body>
+    {{ team }} <br>
+    Random job: {{ job }} <br>
+    Link: <a href="{{ link }}">{{ link }}</a> <br> <br>
+    <table> <!-- credits to Tammy Chen for catching me up -->
+      <tr>
+        <th> {{ jobs }} </th>
+        <th> {{ percent }} </th>
+      </tr>
+      {% for item in collection %}
+        <tr>
+          <td> {{ item }} </td>
+          <td> {{ collection[item][0] }} </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
