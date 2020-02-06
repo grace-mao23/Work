@@ -1,22 +1,39 @@
+<!-- Grace Mao, Jeff Lin
+		 SoftDev2 pd9
+		 K04 - I See a Red Door...
+		 2020-02-06  -->
+
 <!DOCTYPE html>
 
 <html>
-	<style>
-		#slate { border: 1px solid black }
-	</style>
-	<h1> Bonjour Monde </h1>
-	<h2> Demo </h2>
-	<div>
-		<canvas height="600" width="600" id="slate" onclick="draw(event);">
-			This was a canvas.
-		</canvas>
 
-		<!-- button to clear the canvas -->
-		<button>Clear</button>
+	<head>
+		<style>
+			#slate { border: 1px solid black }
+		</style>
+	</head>
 
-		<!-- toggle button that switches between rectangle and draw a dot -->
-		<button></button>
-	</div>
+	<body>
+		<h1> Hola, mundo. Paint! </h1>
+		<h2> Demo </h2>
+		<div>
+			<!-- button to clear the canvas -->
+			<button id="clear">Clear</button>
 
-	<script type="text/javascript" src="clickdraw.js"></script>
+			<!-- toggle button that switches between rectangle and draw a dot -->
+			<button type="button" id="toggle">Switch</button>
+
+			<span style="margin-left:5px">Hi, you're currently in <span id="mode">rectangle</span> mode. Toggle to switch!</span>
+
+			<br> <br>
+
+			<canvas height="600" width="600" id="slate" onclick="draw(event);">
+				This was a canvas.
+			</canvas>
+
+		</div>
+
+		<script type="text/javascript" src="clickdraw.js"></script>
+	</body>
+
 </html>
