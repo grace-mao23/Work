@@ -53,7 +53,7 @@ var drawDot = function(){
 };
 
 // dvd animation
-var drawDvd = function(e) {
+var drawDvd = function() {
   // horizontal bounds
   if (x > canvas.width - 100) {
     xchange = -1;
