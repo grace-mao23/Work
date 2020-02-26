@@ -2,13 +2,11 @@ import pymongo, json
 
 client = pymongo.MongoClient('localhost', 27017) # port 27017
 db = client['testdata'] # does not have to exist
-collection = db['restaurants']
+col = db['restaurants']
 
 def borough(b):
-    query = { "borough": b }
-    results = collection.find(query)
-    for x in results:
-        print(x)
+    for r in col.find({ "borough": b }):
+        pprint.pprint(r)
 
 borough("Manhattan")
 
