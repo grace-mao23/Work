@@ -5,7 +5,7 @@ db = client['testdata'] # does not have to exist
 collection = db['restaurants']
 
 with open('dataset.json') as f:
-    file_data = json.load(f) # read in json file
+    file_data = json.load(f.read()) # read in json file
 
 collection.insert_many(file_data)
 
