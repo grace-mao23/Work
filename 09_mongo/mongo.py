@@ -8,6 +8,13 @@ def borough(b):
     for r in col.find({ "borough": b }):
         pprint.pprint(r)
 
-borough("Manhattan")
+def zipcode(z);
+    for r in col.find({ "zipcode": z }):
+        pprint.pprint(r)
+
+
+### TEST CASES
+# borough("Manhattan")
+zipcode("10282")
 
 client.close() # at the very end !!!
