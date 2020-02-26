@@ -7,7 +7,7 @@ collection = db['restaurants']
 def borough(b):
     query = { "borough": b }
     results = collection.find(query)
-    for x in query:
+    for x in results:
         print(x)
 
 borough("Manhattan")
