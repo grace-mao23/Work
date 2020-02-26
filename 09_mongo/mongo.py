@@ -1,4 +1,4 @@
-import pymongo, json
+import pymongo, json, pprint
 
 client = pymongo.MongoClient('localhost', 27017) # port 27017
 db = client['testdata'] # does not have to exist
