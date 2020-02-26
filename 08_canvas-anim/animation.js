@@ -53,7 +53,7 @@ var drawDot = function(){
 };
 
 // dvd animation
-var drawDvd = function(e) {
+var drawDvd = function() {
   // horizontal bounds
   if (x > canvas.width - 100) {
     xchange = -1;
@@ -84,23 +84,24 @@ var stopIt = function(){
 };
 
 dotButton.addEventListener('click', function(e){
-  if (mode != 1) {
+ // if (mode != 1) {
     window.cancelAnimationFrame(requestID);
+    //radius = 5;
     requestID = window.requestAnimationFrame(drawDot);
     //drawDot();
     mode = 1;
-  }
+ // }
 });
 
 dvdButton.addEventListener('click', function(e){
-  if (mode != 2) {
+//  if (mode != 2) {
     window.cancelAnimationFrame(requestID);
     x = Math.floor(Math.random() * (canvas.width - 100));
     y = Math.floor(Math.random() * (canvas.height - 75));
     requestID = window.requestAnimationFrame(drawDvd);
     //drawDvd();
     mode = 2;
-  }
+//  }
 })
 
 stopButton.addEventListener('click', stopIt);
