@@ -8,7 +8,7 @@ def borough(b):
     for r in col.find({ "borough": b }):
         pprint.pprint(r)
 
-def zipcode(z);
+def zipcode(z):
     for r in col.find({ "zipcode": z }):
         pprint.pprint(r)
 
