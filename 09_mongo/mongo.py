@@ -21,10 +21,12 @@ def zipcode(z):
 
 def grade(z, g):
     for r in col.find({"zipcode": z }):
-        record = r['grades']
-        if (record[record.length - 1] == g) {
+        record = r['records']
+	print(record)
+	print(record[record.length-1])
+        if (record[record.length - 1] == g):
             pprint.pprint(r)
-        }
+
 
 ### TEST CASES
 #borough("Manhattan")
