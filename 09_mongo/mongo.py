@@ -16,21 +16,22 @@ def borough(b):
         pprint.pprint(r)
 
 def zipcode(z):
-    for r in col.find({ "zipcode": z }):
+    for r in col.find({ "address.zipcode": z }):
         pprint.pprint(r)
 
 def grade(z, g):
-    for r in col.find({"zipcode": z }):
+    for r in col.find({ "address.zipcode": z }):
+       # print(r)
         record = r['grades']
-        print(record)
-        print(record[record.length-1])
-        if (record[record.length - 1] == g):
+       # print(record)
+        print(record[len(record)-1])
+        if (record[len(record)-1]['grade'] == g):
             pprint.pprint(r)
 
 
 ### TEST CASES
 #borough("Manhattan")
-#zipcode("10282")
+#zipcode("10014")
 grade("10014", 'A')
 
 client.close() # at the very end !!!
