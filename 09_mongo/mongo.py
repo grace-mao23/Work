@@ -19,9 +19,16 @@ def zipcode(z):
     for r in col.find({ "zipcode": z }):
         pprint.pprint(r)
 
+def grade(z, g):
+    for r in col.find({"zipcode": z }):
+        record = r['grades']
+        if (record[record.length - 1] == g) {
+            pprint.pprint(r)
+        }
 
 ### TEST CASES
-borough("Manhattan")
+#borough("Manhattan")
 #zipcode("10282")
+grade("10014", 'A')
 
 client.close() # at the very end !!!
