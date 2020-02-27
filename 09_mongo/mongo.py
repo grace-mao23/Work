@@ -24,10 +24,16 @@ def grade(z, g):
        # print(r)
         record = r['grades']
        # print(record)
-        print(record[len(record)-1])
+    #    print(record[len(record)-1])
         if (record[len(record)-1]['grade'] == g):
             pprint.pprint(r)
 
+def thres(z, g):
+    for r in col.find({ "address.zipcode": z }):
+        record = r['grades']
+        for i in range(len(record)):
+            if (record[i]['grade'] > (int)g):
+                pprint.pprint(r)
 
 ### TEST CASES
 #borough("Manhattan")
