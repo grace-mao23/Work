@@ -35,6 +35,8 @@ def thres(z, g):
             if (record[i]['grade'] > (int)g):
                 pprint.pprint(r)
 
+# coordinates 0.
+
 ### TEST CASES
 #borough("Manhattan")
 #zipcode("10014")
