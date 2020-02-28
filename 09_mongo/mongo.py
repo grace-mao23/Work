@@ -40,7 +40,8 @@ def cor(x, y):
         restx = r['address']['coord'][0]
         resty = r['address']['coord'][1]
         distance = abs(restx - x) + abs(resty - y)
-        if (distance <= 0.5):
+        #print(distance)
+        if (distance <= 0.01):
             pprint.pprint(r)
 
 ### TEST CASES
@@ -48,6 +49,6 @@ def cor(x, y):
 #zipcode("10014")
 #grade("10014", 'A')
 #thres("10014", 'A')
-cor(-74, 40)
+cor(-74.0, 40.7)
 
 client.close() # at the very end !!!
