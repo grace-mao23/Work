@@ -36,7 +36,7 @@ def thres(z, g):
                 pprint.pprint(r)
 
 def cor(x, y):
-    for r in col:
+    for r in col.find({}):
         restx = r['address']['coord'][0]
         resty = r['address']['coord'][1]
         distance = abs(restx - x) + abs(resty - y)
