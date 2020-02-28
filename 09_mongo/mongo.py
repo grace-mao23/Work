@@ -35,12 +35,19 @@ def thres(z, g):
             if (record[i]['grade'] > g):
                 pprint.pprint(r)
 
-# coordinates 0.
+def cor(x, y):
+    for r in col:
+        restx = r['address']['coord'][0]
+        resty = r['address']['coord'][1]
+        distance = abs(restx - x) + abs(resty - y)
+        if (distance <= 0.5):
+            pprint.pprint(r)
 
 ### TEST CASES
 #borough("Manhattan")
 #zipcode("10014")
 #grade("10014", 'A')
-thres("10014", 'A')
+#thres("10014", 'A')
+cor(-74, 40)
 
 client.close() # at the very end !!!
