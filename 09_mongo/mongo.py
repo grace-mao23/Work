@@ -32,12 +32,13 @@ def thres(z, g):
     for r in col.find({ "address.zipcode": z }):
         record = r['grades']
         for i in range(len(record)):
-            if (record[i]['grade'] > (int)g):
+            if (record[i]['grade'] > g):
                 pprint.pprint(r)
 
 ### TEST CASES
 #borough("Manhattan")
 #zipcode("10014")
-grade("10014", 'A')
+#grade("10014", 'A')
+thres("10014", 'A')
 
 client.close() # at the very end !!!
