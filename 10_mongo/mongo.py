@@ -5,23 +5,14 @@ client = pymongo.MongoClient('localhost', 27017) # port 27017
 db = client['Excel'] # team name as database name
 col = db['meteorites'] # creating collection for NASA data
 
-#if (col.count() == 0): # if it's not already in the database
-file = open("dataset.json", "r")
-data = file.readlines()
-for line in range(len(data)):
-	if line == 0:
-		col.insert_one(loads(data[line]))
-	else:
-		col.insert_one(loads(data[line][1:]))
-#data = loads(file.readlines())
-#col.insert_many(data)
-#content = file.readlines()
-#print(content)
-#for line in content:
-#	print(type(line))
-#	col.insert_one(loads(line))
-
-print(col.count())
+if (col.count() == 0): # if it's not already in the database
+	file = open("dataset.json", "r")
+	data = file.readlines()
+	for line in range(len(data)):
+		if line == 0:
+			col.insert_one(loads(data[line]))
+		else:
+			col.insert_one(loads(data[line][1:]))
 
 # given a letter, return meteorites with names starting with that letter
 def name(a):
