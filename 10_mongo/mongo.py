@@ -1,3 +1,20 @@
+# Hong Wei Chen and Grace Mao: Excel
+# SoftDev pd9
+# K10: Import/Export Bank
+# 2020-03-04
+
+"""
+Dataset:	Earth Meteorite Landings
+Contains:	Information about different meteorites (space rocks) that have
+			landed on Earth, including time, name, geolocation etc.
+Link:		https://data.nasa.gov/resource/y77d-th95.json
+
+Import Mechanism:	Due to the cleanness of this dataset, we only had to
+					read it line by line and use the bson.json_util loads
+					to insert it into our database. Loads from the package
+					converts the information from JSON form into BSON form
+					and makes sure it is ready to be inserted as a document.
+"""
 import pymongo, json, pprint
 from bson.json_util import loads
 
