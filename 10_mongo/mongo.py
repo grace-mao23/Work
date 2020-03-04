@@ -22,13 +22,13 @@ def name(a):
 
 # given a mass, return meteorites with mass within 50 kg of that mass
 def mass(n):
-	for r in col.find({}):
+	for r in col.find({ 'mass': {$exists: true} }):
 		if abs(n - int(r['mass'])) <= 50:
 			pprint.pprint(r)
 
 
 ### TEST CASES ###
-name("A")
+#name("A")
 mass(2020)
 
 
