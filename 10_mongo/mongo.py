@@ -20,8 +20,16 @@ def name(a):
         if r['name'][0] == a:
             pprint.pprint(r)
 
+# given a mass, return meteorites with mass within 50 kg of that mass
+def mass(n):
+	for r in col.find({}):
+		if abs(n - int(r['mass'])) <= 50:
+			pprint.pprint(r)
+
+
 ### TEST CASES ###
 name("A")
+mass(2020)
 
 
 client.close() # at the very end !!!
