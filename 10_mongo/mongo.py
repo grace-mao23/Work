@@ -32,9 +32,16 @@ def biggest(n):
 		if float(r['mass']) > n:
 			pprint.pprint(r)
 
+# given a year, return meteorites that landed in that year
+def year(n):
+	for r in col.find({}):
+		if float(r['year'][:4]) == n:
+			pprint.pprint(r)
+
 ### TEST CASES ###
 #name("A")
 #mass(2020)
-biggest(5000)
+#biggest(10000)
+year(1922)
 
 client.close() # at the very end !!!
