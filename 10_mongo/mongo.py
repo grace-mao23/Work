@@ -22,14 +22,19 @@ def name(a):
 
 # given a mass, return meteorites with mass within 50 kg of that mass
 def mass(n):
-	for r in col.find({ 'mass': {"$exists": true} }):
-		if abs(n - int(r['mass'])) <= 50:
+	for r in col.find({ 'mass': {"$exists": True} }):
+		if abs(n - float(r['mass'])) <= 50:
 			pprint.pprint(r)
 
+# given a mass, return meteorites with mass larger than that mass
+def biggest(n):
+	for r in col.find({ 'mass': {"$exists": True} }):
+		if float(r['mass']) > n:
+			pprint.pprint(r)
 
 ### TEST CASES ###
 #name("A")
-mass(2020)
-
+#mass(2020)
+biggest(5000)
 
 client.close() # at the very end !!!
