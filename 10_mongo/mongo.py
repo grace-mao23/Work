@@ -38,10 +38,23 @@ def year(n):
 		if float(r['year'][:4]) == n:
 			pprint.pprint(r)
 
+# the equator is at latitude 0 degrees
+# each degree of latitude is 68.703 miles
+
+# given a number of miles, return meteorites that landed within that
+# number of miles from the equator in terms of latitude (given by reclat)
+
+def lat(n):
+	degrees = n / 68.703
+	for r in col.find({ 'reclat': {"$exists": True} }):
+		if abs(float(r['reclat']) - degrees) <= n:
+			pprint.pprint(r)
+
 ### TEST CASES ###
 #name("A")
 #mass(2020)
 #biggest(10000)
-year(1922)
+#year(1922)
+lat(100)
 
 client.close() # at the very end !!!
