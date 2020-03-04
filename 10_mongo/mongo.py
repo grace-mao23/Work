@@ -47,7 +47,7 @@ def year(n):
 def lat(n):
 	degrees = n / 68.703
 	for r in col.find({ 'reclat': {"$exists": True} }):
-		if abs(float(r['reclat']) - degrees) <= n:
+		if abs(float(r['reclat'])) <= degrees:
 			pprint.pprint(r)
 
 ### TEST CASES ###
