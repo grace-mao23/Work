@@ -34,7 +34,7 @@ def biggest(n):
 
 # given a year, return meteorites that landed in that year
 def year(n):
-	for r in col.find({}):
+	for r in col.find({ 'year': {"$exists": True} }):
 		if float(r['year'][:4]) == n:
 			pprint.pprint(r)
 
