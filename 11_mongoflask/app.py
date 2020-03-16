@@ -16,12 +16,12 @@ if films.count() == 0:
 
 if rocks.count() == 0:
     file = open("meteorites.json", "r")
-	data = file.readlines()
-	for line in range(len(data)):
-		if line == 0:
-			col.insert_one(loads(data[line]))
-		else:
-			col.insert_one(loads(data[line][1:]))
+    data = file.readlines()
+    for line in range(len(data)):
+        if line == 0:
+            col.insert_one(loads(data[line]))
+        else:
+            col.insert_one(loads(data[line][1:]))
 
 app = Flask(__name__)
 
