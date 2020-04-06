@@ -11,6 +11,7 @@ SoftDev2 pd9
 2020-4-8    
 -->
 
+<body>
 <style>
   .chart div {
   font: 10px sans-serif;
@@ -21,12 +22,18 @@ SoftDev2 pd9
   color: white;
   }
 </style>
+</body>
 
 <div class="chart">
 </div>
 
 <script src="http://d3js.org/d3.v5.min.js"
-	charset="utf-8"></script>
+	charset="utf-8">
+
+<!--	d3.select("body").transition().style("background-color","black"); -->
+
+
+</script>
 
 <!--------------------------------
     Entering the following commands via console will 
@@ -55,6 +62,7 @@ SoftDev2 pd9
 
     //Label each bar.
     barEnter.text(function(d) { return d; });
+
   -------------------------------->
   
 <!-- PREDICTIONS
