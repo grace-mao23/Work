@@ -28,12 +28,13 @@ var transition = function(e){
     hosp.push(data[i][1]);
   };
 
-  d3.select("body").transition().create(hosp);
+  d3.select("body").transition(create(hosp));
 
 };
 
 
 const create = function(data){
+    console.log(data);
     var width = 1000;
     var x = d3.scaleLinear()
       .domain([0, d3.max(data)])
@@ -82,3 +83,4 @@ const create = function(data){
 
 
 renderbtn.addEventListener('click', render);
+transitionbtn.addEventListener('click', transition);
