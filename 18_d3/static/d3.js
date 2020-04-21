@@ -3,13 +3,13 @@
 // K18: Come Up For Air
 // 2020-04-21
 
-//var yes = "we";
 var renderbtn = document.getElementById('render');
 var transitionbtn = document.getElementById('transition');
 
 var svg;
 var x,y;
-var width;
+var width = 1000;
+var count = 0;
 
 var render = function(e){
     const new_cases = [];
@@ -19,15 +19,12 @@ var render = function(e){
         new_cases.push(data[i][0]);
     };
 
-    //console.log(new_cases);
-
-    width = 1000;
-
     console.log(new_cases);
+
     x = d3.scaleLinear()
               .domain([0, d3.max(new_cases)])
               .range([0, width]);
-    console.log(x(data[0][0] - 25));
+
     y = d3.scaleBand()
               .domain(d3.range(data.length))
               .range([0, 15 * data.length]);
@@ -76,49 +73,100 @@ var render = function(e){
 };
 
 var change = function(e){
-    console.log("change");
+    count += 1;
+    console.log(count)
 
     const hosp = [];
+    if (count % 3 == 1){
+      var i;
+      for (i = 0; i < data.length; i++) {
+          hosp.push(data[i][1]);
+      };
 
-    var i;
-    for (i = 0; i < data.length; i++) {
-        hosp.push(data[i][1]);
+      x = d3.scaleLinear()
+               .domain([0, d3.max(hosp)])
+               .range([0, width]);
+
+      console.log(x(data[0][1]));
+
+      svg.selectAll("rect")
+          .transition()
+          .attr("width", function(d) {
+                return x(d[1]);
+          });
+
+      svg.selectAll(".label")
+          .transition()
+          .attr("x", d => x(d[1] - 10))
+          .text(function(d) {
+            return d[1];
+          });
+
+      svg.selectAll(".date")
+          .transition()
+          .attr("x", d => x(d[1] + 80))
     };
 
-    width = 1000;
+    if (count % 3 == 2){
+      var i;
+      for (i = 0; i < data.length; i++) {
+          hosp.push(data[i][2]);
+      };
 
-    x = d3.scaleLinear()
-             .domain([0, d3.max(hosp)])
-             .range([0, width]);
+      x = d3.scaleLinear()
+               .domain([0, d3.max(hosp)])
+               .range([0, width]);
 
-    console.log(x(data[0][1]));
+      //console.log(x(data[0][2]));
 
-    svg.selectAll("rect")
-        .transition()
-        .attr("width", function(d) {
-              return x(d[1]);
-        });
+      svg.selectAll("rect")
+          .transition()
+          .attr("width", function(d) {
+                return x(d[2]);
+          });
 
-    svg.selectAll(".label")
-        .transition()
-        .attr("x", d => x(d[1] - 10))
-        .text(function(d) {
-          return d[1];
-        });
+      svg.selectAll(".label")
+          .transition()
+          .attr("x", d => x(d[2] - 10))
+          .text(function(d) {
+            return d[2];
+          });
 
-    svg.selectAll(".date")
-        .transition()
-        .attr("x", d => x(d[1] + 80))
+      svg.selectAll(".date")
+          .transition()
+          .attr("x", d => x(d[2] + 80))
+    };
 
+    if (count % 3 == 0){
+      var i;
+      for (i = 0; i < data.length; i++) {
+          hosp.push(data[i][0]);
+      };
+
+      x = d3.scaleLinear()
+               .domain([0, d3.max(hosp)])
+               .range([0, width]);
+
+      //console.log(x(data[0][1]));
+
+      svg.selectAll("rect")
+          .transition()
+          .attr("width", function(d) {
+                return x(d[0]);
+          });
+
+      svg.selectAll(".label")
+          .transition()
+          .attr("x", d => x(d[0] - 10))
+          .text(function(d) {
+            return d[0];
+          });
+
+      svg.selectAll(".date")
+          .transition()
+          .attr("x", d => x(d[0] + 80))
+    };
 };
 
-
-
-
-
-transitionbtn.addEventListener('click', change);
-
-
-
-
 renderbtn.addEventListener('click', render);
+transitionbtn.addEventListener('click', change);
