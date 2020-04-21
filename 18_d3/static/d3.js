@@ -8,7 +8,8 @@ var transitionbtn = document.getElementById('transition');
 
 var svg;
 var x,y;
-var width = 1000;
+var width = 1225;
+var height = 1000;
 var count = 0;
 
 var render = function(e){
@@ -21,17 +22,21 @@ var render = function(e){
 
     console.log(new_cases);
 
+    // HEIGHT OF BAR
     x = d3.scaleLinear()
               .domain([0, d3.max(new_cases)])
+              .range([0, height]);
+
+    // WIDTH OF BAR
+    y = d3.scaleBand()
+              .domain(heading)
               .range([0, width]);
 
-    y = d3.scaleBand()
-              .domain(d3.range(data.length))
-              .range([0, 15 * data.length]);
+    //console.log(heading);
 
     svg = d3.create("svg")
-                  .attr("width", width + 200)
-                  .attr("height", y.range()[1])
+                  .attr("width", width + 200) // extra necessary ?
+                  .attr("height", height + 100)
                   .attr("font-family", "sans-serif")
                   .attr("font-size", "10")
                   .attr("text-anchor", "end");
@@ -39,34 +44,43 @@ var render = function(e){
     const bar = svg.selectAll("g")
                     .data(data)
                     .join("g")
-                    .attr("transform", (d, i) => `translate(0,${y(i)})`);
+                    .attr("transform", (d, i) => `translate(${y(heading[i])}, 0)`);
 
     bar.append("rect")
         .attr("fill", "steelblue")
-        .attr("width", function(d) {
+        .attr("height", function(d) {
           return x(d[0]);
         })
-        .attr("height", y.bandwidth() - 1);
+        .attr("width", y.bandwidth() - 1) // -1 ?
+        .attr("y", function(d) {
+          return height - x(d[0]);
+        });
 
     bar.append("text")
         .attr("class", "date")
         .attr("fill", "black")
-        .attr("x", d => x(d[0] + 225))
-        .attr("y", y.bandwidth() / 2 + 3)
-        .attr("dy", "0.35")
+        .attr("y", function(d) {
+          return height + 10;
+        })
+        .attr("x", y.bandwidth() / 2 - 10)
+        .attr("text-anchor", "start")
+      //  .attr("dx", "0.35")
+        .attr("transform", function(d) {
+          return "rotate(45, " + (y.bandwidth() / 2 - 10) + ", " + (height + 10) + ")";
+        })
         .text(function(d, i) {
             return heading[i];
         });
-
+/*
     bar.append("text")
         .attr("class", "label")
         .attr("fill", "white")
-        .attr("x", d => x(d[0] - 25))
-        .attr("y", y.bandwidth() / 2 + 3)
-        .attr("dy", "0.35")
+        .attr("y", d => x(d[0] - 25))
+        .attr("x", y.bandwidth() / 2 + 3)
+        .attr("dx", "0.35")
         .text(function(d) {
             return d[0];
-        });
+        });*/
 
     document.getElementsByTagName("body")[0].append(svg.node());
 
